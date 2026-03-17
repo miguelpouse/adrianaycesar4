@@ -1,0 +1,103 @@
+:root {
+    --terracota: #b35528;
+    --blue: #1d2739;
+    --olive: #556b2f;
+    --cream: #f2ede4;
+    --white: #ffffff;
+    --text-dark: #2c2c2c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--white); font-family: 'Montserrat', sans-serif; }
+body.no-scroll { overflow: hidden; }
+
+/* --- CAPA DEL SOBRE (Sólida e independiente) --- */
+.envelope-wrapper {
+    position: fixed; inset: 0; background-color: var(--terracota);
+    display: flex; align-items: center; justify-content: center; z-index: 99999;
+    transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.envelope-wrapper.zoom-out { transform: scale(5); opacity: 0; pointer-events: none; }
+
+.floral-background-overlay {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover; background-position: center;
+    opacity: 0.35; filter: blur(12px); z-index: -1;
+}
+
+.envelope { position: relative; width: 340px; height: 230px; background: var(--cream); cursor: pointer; }
+.flap {
+    position: absolute; top: 0; width: 0; height: 0; border-left: 170px solid transparent; border-right: 170px solid transparent;
+    border-top: 125px solid #dcd1be; transform-origin: top; transition: transform 0.8s ease-in-out; z-index: 4;
+}
+.envelope.open .flap { transform: rotateX(180deg); z-index: 1; }
+.pocket { position: absolute; bottom: 0; width: 100%; height: 100%; background: var(--cream); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 50%, 0 0); z-index: 3; }
+.heart-seal { position: absolute; top: 100px; left: 50%; transform: translateX(-50%); width: 55px; height: 55px; background: var(--terracota); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; z-index: 5; }
+
+/* HOJA CARTA AJUSTADA */
+.letter {
+    position: absolute; top: 50%; left: 50%; width: 320px; height: 440px;
+    background: #fff; z-index: 2; padding: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    transform: translate(-50%, -40%) scaleY(0.1); transform-origin: center; opacity: 0;
+    transition: transform 1.5s 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s 0.8s ease;
+}
+.envelope.open .letter { transform: translate(-50%, -50%) scaleY(1) scaleX(1.1); opacity: 1; z-index: 10; }
+
+.letter-paper { border: 1px solid var(--olive); height: 100%; display: flex; align-items: center; justify-content: center; }
+.letter-content { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; padding: 40px 10px; }
+.letter-main-names { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--terracota); line-height: 1.1; }
+.amp-olive { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--olive); display: block; margin: 15px 0; }
+.letter-date-full { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--blue); }
+
+/* --- DISEÑO DE LAS SECCIONES (Protegido) --- */
+.main-page-reveal { width: 100%; }
+
+.section-luxury { padding: 100px 0; text-align: center; width: 100%; clear: both; }
+.bg-cream { background-color: var(--cream); }
+.bg-blue { background-color: var(--blue); color: #fff; }
+.bg-terracota { background-color: var(--terracota); color: #fff; }
+.bg-white { background-color: var(--white); }
+
+.hero-parallax {
+    height: 100vh; position: relative; display: flex; align-items: center; justify-content: center;
+    background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat fixed;
+    text-align: center; color: #fff;
+}
+.hero-overlay { position: absolute; inset: 0; background: rgba(29,39,57,0.45); }
+.hero-title-script { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 12vw, 7.5rem); display: flex; flex-direction: column; }
+
+.padrinos-container { max-width: 850px; margin: 0 auto; padding: 60px; border: 1px solid rgba(255,255,255,0.1); }
+.padrinos-flex { display: flex; justify-content: center; align-items: center; gap: 60px; }
+.padrino-box p { font-family: 'Cinzel', serif; font-size: 1.6rem; }
+.p-divider-script { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--terracota); }
+
+.countdown-luxury { display: flex; justify-content: center; gap: 50px; }
+.unit span { font-size: 5rem; font-family: 'Cinzel', serif; color: var(--terracota); }
+
+.section-gallery { padding: 100px 0; overflow: hidden; width: 100%; }
+.carousel-track { display: flex; width: calc(250px * 10); animation: scroll 30s linear infinite; }
+.carousel-item { width: 250px; padding: 0 15px; flex-shrink: 0; }
+.carousel-item img { width: 100%; height: 350px; object-fit: cover; border: 1px solid var(--cream); }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 4)); } }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+.location-box { padding: 40px; border: 1px solid var(--terracota); background: #fff; color: var(--text-dark); }
+.map-frame { height: 250px; margin: 20px 0; border: 1px solid var(--cream); }
+.map-frame iframe { width: 100%; height: 100%; border: 0; }
+
+.rsvp-card { max-width: 600px; margin: 0 auto; padding: 60px; border: 1px solid rgba(255,255,255,0.2); }
+.form-luxury input, .form-luxury select { width: 100%; padding: 15px; margin-bottom: 20px; background: transparent; border: 1px solid #fff; color: #fff; }
+.btn-submit { width: 100%; padding: 18px; background: #fff; color: var(--terracota); font-weight: bold; border: none; cursor: pointer; letter-spacing: 3px; }
+
+.footer-final { padding: 100px 0; text-align: center; background: #1a1a1a; color: #fff; }
+.f-logo { font-family: 'Cinzel', serif; font-size: 2.5rem; letter-spacing: 15px; }
+
+.music-player-luxury { position: fixed; bottom: 35px; right: 35px; z-index: 100; }
+.music-toggle { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--terracota); background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+@media (max-width: 850px) {
+    .grid-2, .countdown-luxury, .padrinos-flex { flex-direction: column; gap: 40px; }
+    .letter { width: 280px; height: 420px; }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriana & Cesar | Nuestra Boda</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="no-scroll">
+
+    <div id="envelope-wrapper" class="envelope-wrapper">
+        <div class="floral-background-overlay"></div>
+        <div class="envelope" onclick="openEnvelope()">
+            <div class="flap"></div>
+            <div class="pocket"></div>
+            <div class="heart-seal"><i class="fa-solid fa-heart"></i></div>
+            <div class="letter">
+                <div class="letter-paper">
+                    <div class="letter-content">
+                        <div class="letter-inner-wrapper">
+                            <p class="letter-top">ESTÁS INVITADO A LA BODA DE</p>
+                            <h2 class="letter-main-names">Adriana <br> <span class="amp-olive">&</span> <br> Cesar</h2>
+                            <div class="letter-line"></div>
+                            <p class="letter-date-full">14 DE NOVIEMBRE, 2026</p>
+                            <div class="letter-spacer"></div>
+                            <p class="letter-instruction">Desliza para ver la historia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="envelope-instruction">Toca el sello para abrir</div>
+        </div>
+    </div>
+
+    <div class="music-player-luxury">
+        <button id="music-btn" class="music-toggle">
+            <div class="music-bars"><span></span><span></span><span></span></div>
+        </button>
+        <audio id="wedding-song" loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="main-content" class="main-page-reveal">
+        
+        <header class="hero-parallax">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-pretitle">SAVE THE DATE</p>
+                <h1 class="hero-title-script">
+                    <span class="name">Adriana</span> 
+                    <span class="ampersand">&</span> 
+                    <span class="name">Cesar</span>
+                </h1>
+                <div class="hero-details">
+                    <span class="line"></span>
+                    <p>14 . NOVIEMBRE . 2026</p>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-luxury bg-cream">
+            <div class="container">
+                <h2 class="cinzel-title terracota">El Gran Día Comienza En</h2>
+                <div id="countdown" class="countdown-luxury">
+                    <div class="unit"><span id="days">00</span><p>DÍAS</p></div>
+                    <div class="unit"><span id="hours">00</span><p>HRS</p></div>
+                    <div class="unit"><span id="minutes">00</span><p>MIN</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-luxury bg-blue">
+            <div class="container">
+                <div class="padrinos-container">
+                    <h3 class="script-padrinos">Con la bendición de nuestros padrinos de velación</h3>
+                    <div class="padrinos-flex">
+                        <div class="padrino-box">
+                            <span>Madrina</span>
+                            <p>Estela Franco Suarez</p>
+                        </div>
+                        <div class="p-divider-script">&</div>
+                        <div class="padrino-box">
+                            <span>Padrino</span>
+                            <p>Julio Cesar Mendez Zamorano</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-gallery bg-white">
+            <div class="container">
+                <h2 class="cinzel-title terracota">Nuestra Historia</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600"></div>
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"></div>
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600"></div>
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1460364155252-978247ca99d5?auto=format&fit=crop&q=80&w=600"></div>
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600"></div>
+                        <div class="carousel-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-luxury bg-cream">
+            <div class="container">
+                <h2 class="cinzel-title olive">Ubicaciones</h2>
+                <div class="grid-2">
+                    <div class="location-box">
+                        <h3>Ceremonia Religiosa</h3>
+                        <p class="time">17:00 HRS</p>
+                        <div class="map-frame">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6610!2d-99.16!3d19.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzQ4LjAiTiA5OcKwMDknMzYuMCJX!5e0!3m2!1ses!2smx!4v1" loading="lazy"></iframe>
+                        </div>
+                        <p class="place">Parroquia de Nuestra Señora</p>
+                    </div>
+                    <div class="location-box">
+                        <h3>Recepción</h3>
+                        <p class="time">19:30 HRS</p>
+                        <div class="map-frame">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6610!2d-99.16!3d19.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzQ4LjAiTiA5OcKwMDknMzYuMCJX!5e0!3m2!1ses!2smx!4v1" loading="lazy"></iframe>
+                        </div>
+                        <p class="place">Hacienda Los Olivos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-luxury bg-terracota">
+            <div class="container">
+                <div class="rsvp-card">
+                    <h2 class="cinzel-title white">Confirmación de Asistencia</h2>
+                    <form id="rsvp-form" class="form-luxury">
+                        <input type="text" placeholder="Tu nombre completo" required>
+                        <select required>
+                            <option value="" disabled selected>¿Asistirás?</option>
+                            <option value="si">Confirmar Asistencia</option>
+                            <option value="no">No podré asistir</option>
+                        </select>
+                        <button type="submit" class="btn-submit">ENVIAR</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-final">
+            <h2 class="f-logo">A <span class="terracota-text">&</span> C</h2>
+            <p>14 . NOVIEMBRE . 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            const env = document.querySelector('.envelope');
+            const wrapper = document.getElementById('envelope-wrapper');
+            const audio = document.getElementById('wedding-song');
+            const musicBtn = document.getElementById('music-btn');
+            
+            env.classList.add('open');
+            
+            setTimeout(() => {
+                wrapper.classList.add('zoom-out');
+                audio.play();
+                musicBtn.classList.add('active');
+                document.body.classList.remove('no-scroll');
+            }, 6500); 
+        }
+
+        const weddingDate = new Date("Nov 14, 2026 17:00:00").getTime();
+        setInterval(() => {
+            const dist = weddingDate - new Date().getTime();
+            document.getElementById("days").innerText = Math.floor(dist / 864e5);
+            document.getElementById("hours").innerText = Math.floor((dist % 864e5) / 36e5);
+            document.getElementById("minutes").innerText = Math.floor((dist % 36e5) / 6e4);
+        }, 1000);
+
+        const musicBtn = document.getElementById('music-btn');
+        const audio = document.getElementById('wedding-song');
+        musicBtn.onclick = () => {
+            audio.paused ? (audio.play(), musicBtn.classList.add('active')) : (audio.pause(), musicBtn.classList.remove('active'));
+        };
+
+        document.getElementById('rsvp-form').onsubmit = (e) => {
+            e.preventDefault();
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#b35528', '#556b2f', '#1d2739'] });
+            alert('¡Gracias por confirmar!');
+        };
+    </script>
+</body>
+</html>
