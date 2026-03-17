@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Adriana & Cesar | Nuestra Boda</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -25,16 +25,18 @@
                     <div class="letter-content">
                         <div class="letter-inner-wrapper">
                             <p class="letter-top">ESTÁS INVITADO A LA BODA DE</p>
-                            <h2 class="letter-main-names">Adriana <br> <span class="amp-olive">&</span> <br> Cesar</h2>
+                            <h2 class="letter-main-names-script">
+                                <span class="terracota-text">Adriana</span> <br> 
+                                <span class="amp-olive">&</span> <br> 
+                                <span class="terracota-text">Cesar</span>
+                            </h2>
                             <div class="letter-line"></div>
                             <p class="letter-date-full">14 DE NOVIEMBRE, 2026</p>
-                            <div class="letter-spacer"></div>
-                            <p class="letter-instruction">Desliza para ver la historia</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="envelope-instruction">Toca el sello para abrir</div>
+            <div class="envelope-instruction">Click aquí para abrir</div>
         </div>
     </div>
 
@@ -48,7 +50,6 @@
     </div>
 
     <div id="main-content" class="main-page-reveal">
-        
         <header class="hero-parallax">
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -83,13 +84,13 @@
                     <h3 class="script-padrinos">Con la bendición de nuestros padrinos de velación</h3>
                     <div class="padrinos-flex">
                         <div class="padrino-box">
-                            <span>Madrina</span>
-                            <p>Estela Franco Suarez</p>
+                            <span class="p-role">Madrina</span>
+                            <p class="p-name">Estela Franco Suarez</p>
                         </div>
                         <div class="p-divider-script">&</div>
                         <div class="padrino-box">
-                            <span>Padrino</span>
-                            <p>Julio Cesar Mendez Zamorano</p>
+                            <span class="p-role">Padrino</span>
+                            <p class="p-name">Julio Cesar Mendez Zamorano</p>
                         </div>
                     </div>
                 </div>
@@ -165,9 +166,7 @@
             const wrapper = document.getElementById('envelope-wrapper');
             const audio = document.getElementById('wedding-song');
             const musicBtn = document.getElementById('music-btn');
-            
             env.classList.add('open');
-            
             setTimeout(() => {
                 wrapper.classList.add('zoom-out');
                 audio.play();
@@ -179,9 +178,11 @@
         const weddingDate = new Date("Nov 14, 2026 17:00:00").getTime();
         setInterval(() => {
             const dist = weddingDate - new Date().getTime();
-            document.getElementById("days").innerText = Math.floor(dist / 864e5);
-            document.getElementById("hours").innerText = Math.floor((dist % 864e5) / 36e5);
-            document.getElementById("minutes").innerText = Math.floor((dist % 36e5) / 6e4);
+            if (document.getElementById("days")) {
+                document.getElementById("days").innerText = Math.floor(dist / 864e5);
+                document.getElementById("hours").innerText = Math.floor((dist % 864e5) / 36e5);
+                document.getElementById("minutes").innerText = Math.floor((dist % 36e5) / 6e4);
+            }
         }, 1000);
 
         const musicBtn = document.getElementById('music-btn');
